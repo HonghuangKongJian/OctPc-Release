@@ -33,6 +33,73 @@
 
 ---
 
+## 🔌 第三方客户程序无缝集成指南 (Zero-Code 插件与工具集成)
+
+无论是研发全新的测绘/GIS/数字孪生系统，还是为已有的行业三维软件扩展海量点云浏览功能，OctPc 均提供了极简的直接集成方案，**客户现有主程序无需重新编译即可直接使用**：
+
+### 模式一：三维宿主系统零重编译即插即用 (OSG 插件方式)
+
+若客户已有基于 OpenSceneGraph (OSG) 的三维应用程序：
+
+#### 步骤 1：部署插件动态库
+将发布包中的 `osgdb_octpc.dll` 直接拷贝至客户软件运行目录下的 `osgPlugins-3.x.x/` 插件子目录（或与客户主程序 `.exe` 同目录）。
+
+#### 步骤 2：一行代码直接加载渲染
+客户程序无需改动原有渲染管线，直接使用 OSG 标准接口：
+```cpp
+#include <osgDB/ReadFile>
+
+// 1. 直接加载 .octpc 八叉树点云（OSG 插件自动接管分页多分辨率调度）
+osg::ref_ptr<osg::Node> pointCloud = osgDB::readNodeFile("D:/data/survey.octpc");
+
+// 2. 将节点加入三维场景总根节点
+rootGroup->addChild(pointCloud.get());
+```
+
+#### 步骤 3（可选）：动态传参控制着色模式与视距
+通过 OSG 标准 `ReaderWriter::Options`，主程序可自由控制渲染参数：
+```cpp
+osg::ref_ptr<osgDB::ReaderWriter::Options> options = new osgDB::ReaderWriter::Options();
+// 显示模式：0-原始RGB, 1-激光反射强度, 2-分类颜色, 4-高程动态色带
+options->setPluginStringData("TD_PcDisplayMode", "1");
+// LOD细化视距灵敏度倍率（默认 40.0）
+options->setPluginStringData("TD_PcDisplayDistRatio", "40.0");
+
+osg::ref_ptr<osg::Node> pointCloud = osgDB::readNodeFile("D:/data/survey.octpc", options.get());
+```
+
+---
+
+### 模式二：业务系统自动化格式转换 (CLI 进程级集成)
+
+若客户使用的是 C# (WPF/WinForm)、Qt、Python、Electron 等业务软件，可将 `octpc_cli.exe` 放入软件安装目录作为后台无头引擎调用：
+
+#### C# / .NET 集成示例：
+```csharp
+var process = new Process();
+process.StartInfo.FileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "octpc_cli.exe");
+process.StartInfo.Arguments = "\"D:\\data\\input.las\" -d 5"; // -d 5 指定5层八叉树
+process.StartInfo.CreateNoWindow = true;
+process.StartInfo.UseShellExecute = false;
+process.Start();
+process.WaitForExit();
+
+// 转换完成，生成的同名 D:\data\input.octpc 即可由渲染器接管
+```
+
+#### Python 集成示例：
+```python
+import subprocess
+import os
+
+# 后台静默调用八叉树转换
+cmd = ["octpc_cli.exe", "D:/data/input.las", "-d", "5"]
+subprocess.run(cmd, check=True)
+print("转换成功，生成 D:/data/input.octpc")
+```
+
+---
+
 ## 🧪 测试点云生成工具 (5000 万点高精度人形模型)
 
 如果您手头没有现成的大体量激光点云数据，本项目贴心配套了千万级点云生成脚本 `generate_humanoid.py`：
