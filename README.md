@@ -9,8 +9,8 @@
 [![Capacity](https://img.shields.io/badge/单工程承载-千亿级点云-orange.svg)]()
 [![Performance](https://img.shields.io/badge/视口漫游-60%20FPS%20丝滑流畅-blue.svg)]()
 [![Test Data](https://img.shields.io/badge/配套测试集-5000万点%20人形点云-green.svg)]()
-[![SDK](https://img.shields.io/badge/开发者SDK-即将推出-blueviolet.svg)]()
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![SDK](https://img.shields.io/badge/开发者SDK-正式推出%20v3.0.0-blueviolet.svg)](https://amw3.eu.org)
+[![License: Dual](https://img.shields.io/badge/License-MIT%20%7C%20Commercial-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/Platform-Windows%20x64-lightgrey.svg)]()
 [![Sponsor](https://img.shields.io/badge/☕-赞赏支持-rose.svg)](#-赞赏与支持-sponsor)
 
@@ -123,13 +123,16 @@ print("转换成功，生成 D:/data/input.octpc")
 
 ---
 
-## 🧩 二次开发与 SDK 支持规划 (Roadmap)
+## 🧩 开发者 SDK 与双轨授权模式 (Developer SDK & Dual-License)
 
-- **开发者 SDK 即将推出**：团队正在对底层核心能力进行标准化抽象封装，**后期将正式面向开发者与行业生态提供标准的 SDK 调用支持**；
+- 🚀 **开发者 SDK 正式推出 (v3.0.0)**：已对底层核心算法与读写流全面解耦，提供纯原生 C++17 统一入口头文件 `octpc_sdk.h` 与配套示例工程；
 - **典型赋能场景**：
   - 轻松嵌入 GIS 平台、无人机航测后处理软件、数字孪生/BIM 引擎、CASS 等三维测绘测量系统；
   - 提供海量点云自定义构建、空间索引查询、快速降采样抽稀与定制视口嵌入能力；
-- **早期技术合作**：如有提前试用或深度业务集成需求，欢迎通过下方技术邮箱与作者取得联系。
+- ⚖️ **双轨许可原则**：
+  - **社区版 (Community)**：**功能 100% 完全开放**（单工程支持千亿级点云，无任何性能截断），渲染画面保留轻量水印标识，个人学习、科研与内部评估完全免费；
+  - **商业版 (Pro)**：**彻底移除画面水印**，支持品牌 OEM/深度嵌入行业测绘/GIS 商业软件系统，并提供官方 24h 优先技术支持服务；
+- 🤝 **商业授权咨询**：欢迎通过官方技术邮箱 [19053936@qq.com](mailto:19053936@qq.com) 与作者取得联系。
 
 ---
 
