@@ -1,3 +1,7 @@
+<p align="right">
+  <b>🇨🇳 简体中文</b> | <a href="README_EN.md">🇬🇧 English</a>
+</p>
+
 # OctPc - 海量点云高性能八叉树转换工具与三维交互浏览器
 
 [![GitHub release](https://img.shields.io/github/v/release/HonghuangKongJian/OctPc-Release?color=brightgreen&label=最新版本)](https://github.com/HonghuangKongJian/OctPc-Release/releases)
@@ -30,7 +34,12 @@
   - 打开原始 `.las` 文件时自动匹配同级 `.octpc`，未找到时自动调起后台转换并直接呈现；
   - 运行中随时按 `[F3]` 即可选择新点云并平滑无缝切换；
 - 🎨 **多维度科学赋色**：
-  - 原始 RGB 真彩色、激光反射强度灰度、语义分类颜色及高程动态渐变色带一键自由切换。
+  - 原始 RGB 真彩色、激光反射强度灰度、语义分类颜色及高程动态渐变色带一键自由切换；
+- 🌐 **原生中英双语支持 (Bilingual Ready)**：
+  - 全套程序（`octpc_cli` 与 `octpc_viewer`）及文档均已原生支持中英双语；
+  - 自动根据操作系统语言环境匹配界面与控制台帮助；
+  - 支持命令行参数显式指定（`--lang en` / `--lang zh`）；
+  - 3D 视口内随时按下 `[L]` 键可在中文与英文 HUD 状态栏之间无缝切换。
 
 ---
 
@@ -178,6 +187,7 @@ octpc_cli.exe D:\data\survey.las -d 6 -f
 | **[F3]** | 弹出文件选择器，打开新点云文件并无缝切换 |
 | **[B]** | 循环切换视口背景色（深灰黑 / 纯黑 / 藏青夜空 / 浅灰白） |
 | **[H]** | 开启 / 关闭屏幕左上角帮助与状态 HUD 抬头面板 |
+| **[L]** | 实时切换界面中英双语 (中 ⇄ 英) |
 | **[O] 或 [F1]** | 打开官方技术主页 |
 | **[M] 或 [F2]** | 发送技术支持与反馈邮件 |
 
