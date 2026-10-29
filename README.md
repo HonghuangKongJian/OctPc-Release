@@ -7,6 +7,7 @@
 [![SDK](https://img.shields.io/badge/开发者SDK-即将推出-blueviolet.svg)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/Platform-Windows%20x64-lightgrey.svg)]()
+[![Sponsor](https://img.shields.io/badge/☕-赞赏支持-rose.svg)](#-赞赏与支持-sponsor)
 
 > 🚀 **单工程支持高达 21 亿个点（2.1 Billion Points）流畅漫游浏览！**  
 > 彻底告别卡顿与崩溃，普通办公电脑与笔记本亦可畅享海量点云极致交互。
@@ -197,3 +198,39 @@ octpc_cli.exe D:\data\survey.las -d 6 -f
 - **技术支持邮箱**：[19053936@qq.com](mailto:19053936@qq.com)
 - **问题反馈与建议**：欢迎在 [GitHub Issues](https://github.com/HonghuangKongJian/OctPc-Release/issues) 中提交数据格式兼容性反馈。
 - **开源许可证**：[MIT License](LICENSE)
+
+---
+
+## ☕ 赞赏与支持 (Sponsor)
+
+如果您觉得 **OctPc** 对您的工作、学习、科学研究或数字孪生/GIS工程开发有所帮助，欢迎赞赏支持作者！您的每一份鼓励都是我们持续演进八叉树算法、提升吞吐性能与坚持开源免费的最大动力！
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center" width="320">
+        <a href="https://amw3.eu.org">
+          <img src="docs/images/wechat-reward.png" width="220" alt="微信赞赏码" />
+        </a>
+        <br/>
+        <b>🟢 微信赞赏支持</b>
+        <br/>
+        <sub>打开手机微信扫一扫</sub>
+      </td>
+      <td align="center" width="320">
+        <a href="https://amw3.eu.org">
+          <img src="docs/images/alipay-reward.png" width="220" alt="支付宝收款码" />
+        </a>
+        <br/>
+        <b>🔵 支付宝收款支持</b>
+        <br/>
+        <sub>打开手机支付宝扫一扫</sub>
+      </td>
+    </tr>
+  </table>
+  <br/>
+  <p>
+    🌐 <b>洪荒空间门户矩阵</b>：<a href="https://amw3.eu.org">https://amw3.eu.org</a><br/>
+    📧 <b>联系与技术交流邮箱</b>：<a href="mailto:19053936@qq.com">19053936@qq.com</a>
+  </p>
+</div>
