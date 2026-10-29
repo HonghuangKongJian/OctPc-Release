@@ -5,7 +5,8 @@
 # OctPc - High-Performance Point Cloud Octree Indexing Suite & 3D Interactive Viewer
 
 [![GitHub release](https://img.shields.io/github/v/release/HonghuangKongJian/OctPc-Release?color=brightgreen&label=Release%20v3.0.0)](https://github.com/HonghuangKongJian/OctPc-Release/releases)
-[![Capacity](https://img.shields.io/badge/Project_Capacity-2.1%2B_Billion_Pts-orange.svg)]()
+[![Format](https://img.shields.io/badge/Format-64--bit%20V2-emerald.svg)](https://amw3.eu.org)
+[![Capacity](https://img.shields.io/badge/Capacity-Billion--scale-orange.svg)]()
 [![Performance](https://img.shields.io/badge/Viewport_Roaming-60_FPS_Smooth-blue.svg)]()
 [![Test Data](https://img.shields.io/badge/Test_Dataset-50M_Humanoid_Pts-green.svg)]()
 [![SDK](https://img.shields.io/badge/Developer_SDK-Ready-blueviolet.svg)]()
@@ -13,8 +14,8 @@
 [![Platform](https://img.shields.io/badge/Platform-Windows%20x64-lightgrey.svg)]()
 [![Sponsor](https://img.shields.io/badge/☕-Sponsor-rose.svg)](#-sponsor--support)
 
-> 🚀 **Single project handles up to 2.1+ Billion Points with smooth 60 FPS roaming!**  
-> Say goodbye to out-of-memory crashes and stuttering. Enjoy silky interactive roaming even on standard office laptops.
+> 🚀 **Single project handles up to Billion-scale points with smooth 60 FPS roaming!**  
+> Brand new 64-bit spatial addressing architecture and V2 topology break through the historical 2.1-billion-point limitation, enabling massive point cloud visualization even on ordinary office PCs and laptops.
 
 **OctPc** is a modern, high-performance technology stack for ultra-large-scale LiDAR point clouds (LAS/LAZ). Built upon an in-house linear octree topology and multi-core spatial partitioning, it eliminates long import waits, high GPU memory overhead, and viewport frame drops, delivering blazing-fast spatial conversion and millisecond-level instant 60 FPS streaming rendering.
 
@@ -22,17 +23,17 @@
 
 ## 🌟 Key Features & Highlights
 
-- 🏆 **2.1+ Billion Points Capacity & 60 FPS Roaming**:
-  - Engineered with 64-bit spatial addressing and dynamic adaptive PagedLOD frustum culling.
-  - Front-end streams only visible points based on distance, keeping resident memory within a few hundred megabytes for silky 60 FPS flights.
+- 🏆 **Billion-Scale Point Cloud Capacity with 64-bit V2 Format**:
+  - Full architectural upgrade to 64-bit file offset addressing, breaking the 2.14-billion-point limit (2^31-1) with native multi-billion point cloud support; backward compatible with V1 format;
+  - Front-end streams only visible points dynamically via PagedLOD frustum culling, maintaining a resident memory footprint of just a few hundred megabytes for silky 60 FPS flights.
+- 🌐 **Full-Stack Native Bilingual Support (Zh / En)**:
+  - Both `octpc_cli` and `octpc_viewer` support Chinese and English with automatic OS locale detection;
+  - Command-line flags `--lang en` and `--lang zh` supported;
+  - Press `[L]` anytime in the 3D viewport to toggle the HUD language seamlessly.
 - ⚡ **Multi-Core High-Speed Conversion (`octpc_cli`)**:
   - Achieves **8~10 Million Points/sec** spatial index throughput using multi-core space partitioning and 16MB contiguous write buffering.
 - 📦 **Zero-Dependency Portable Distribution**:
   - Pure green standalone architecture completely free from PCL, Boost, Eigen, or MFC (~2.9 MB total size).
-- 🌐 **Native Bilingual Support (Zh / En)**:
-  - Both `octpc_cli` and `octpc_viewer` support Chinese and English with automatic OS locale detection;
-  - Command-line flags `--lang en` and `--lang zh` supported;
-  - Press `[L]` anytime in the 3D viewport to toggle the HUD language in real time.
 - 🎯 **Seamless File Interaction & Auto-Conversion (`octpc_viewer`)**:
   - Automatically invokes native Windows file dialogs;
   - Seamlessly triggers background conversion when opening raw `.las` files;
@@ -103,6 +104,17 @@ print("Conversion completed: D:/data/input.octpc")
 
 ---
 
+## 📦 Package Downloads
+
+Please visit 👉 **[Releases](https://github.com/HonghuangKongJian/OctPc-Release/releases)** to download:
+
+| Package | Size | Description |
+| :--- | :--- | :--- |
+| **`octpc_suite_v3.0.0.zip`** | **~2.9 MB** | **[Recommended] All-in-One Portable Suite**. Contains 3D viewer, converter CLI, complete DLLs and launcher scripts. |
+| **`octpc_cli_v3.0.0.zip`** | **~240 KB** | **Standalone CLI Converter**. Ultra-lightweight headless engine for server batching and data pipelines. |
+
+---
+
 ## ⌨️ 3D Viewer Interactive Hotkeys
 
 | Hotkey / Action | Description |
@@ -126,9 +138,32 @@ print("Conversion completed: D:/data/input.octpc")
 ## 📄 File Format Specifications
 
 Processing an input `filename.las` generates:
-1. **`filename.octpc`**: Master octree index file (bounding box, global offsets, property flags, node offset map);
+1. **`filename.octpc`**: Master 64-bit V2 octree index file (bounding box, global offsets, property flags, node offset map);
 2. **`filename.octlod`**: Multi-resolution spatial downsampled LOD preview cache;
 3. **`filename_oct.las`**: Geometry data reordered along linear space-filling curve.
+
+---
+
+## 📝 Release History (Changelog)
+
+### v3.0.0 (Latest)
+- 🚀 **New 64-bit V2 Topology**: Completely refactored octree index addressing to 64-bit integers, smashing the 2.14-billion-point ceiling with multi-billion point cloud capacity; full backward compatibility with V1 format;
+- 🌐 **Full-Stack Native Bilingual Support**: `octpc_cli` and `octpc_viewer` auto-adapt to OS locale; CLI `--lang zh/en` flag, Viewer `[L]` hotkey for instant bilingual toggle;
+- ⚡ **Enhanced Viewport Interaction**: Tuned dynamic LOD culling curve and added real-time hotkeys;
+- 📦 **Dual Packaging**: All-in-one suite (`octpc_suite_v3.0.0.zip`) & standalone CLI (`octpc_cli_v3.0.0.zip`).
+
+### v2.0.0
+- 📦 **All-in-One Portable Suite**: Merged standalone packages into a single zero-dependency suite;
+- 🎨 **Multi-Dimensional Coloring & Dialogs**: True Color RGB, Intensity, Classification and Elevation ramp modes.
+
+---
+
+## 🌐 Official Portal & Support
+
+- **Official Portal**: [https://amw3.eu.org](https://amw3.eu.org)
+- **Technical Support Email**: [19053936@qq.com](mailto:19053936@qq.com)
+- **Feedback & Issues**: Welcome to open tickets on [GitHub Issues](https://github.com/HonghuangKongJian/OctPc-Release/issues).
+- **License**: [MIT License](LICENSE)
 
 ---
 

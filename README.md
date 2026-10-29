@@ -4,8 +4,9 @@
 
 # OctPc - 海量点云高性能八叉树转换工具与三维交互浏览器
 
-[![GitHub release](https://img.shields.io/github/v/release/HonghuangKongJian/OctPc-Release?color=brightgreen&label=最新版本)](https://github.com/HonghuangKongJian/OctPc-Release/releases)
-[![Capacity](https://img.shields.io/badge/单工程承载-21%20亿点-orange.svg)]()
+[![GitHub release](https://img.shields.io/github/v/release/HonghuangKongJian/OctPc-Release?color=brightgreen&label=最新版本%20v3.0.0)](https://github.com/HonghuangKongJian/OctPc-Release/releases)
+[![Format](https://img.shields.io/badge/索引格式-64位%20V2-emerald.svg)](https://amw3.eu.org)
+[![Capacity](https://img.shields.io/badge/单工程承载-千亿级点云-orange.svg)]()
 [![Performance](https://img.shields.io/badge/视口漫游-60%20FPS%20丝滑流畅-blue.svg)]()
 [![Test Data](https://img.shields.io/badge/配套测试集-5000万点%20人形点云-green.svg)]()
 [![SDK](https://img.shields.io/badge/开发者SDK-即将推出-blueviolet.svg)]()
@@ -13,8 +14,8 @@
 [![Platform](https://img.shields.io/badge/Platform-Windows%20x64-lightgrey.svg)]()
 [![Sponsor](https://img.shields.io/badge/☕-赞赏支持-rose.svg)](#-赞赏与支持-sponsor)
 
-> 🚀 **单工程支持高达 21 亿个点（2.1 Billion Points）流畅漫游浏览！**  
-> 彻底告别卡顿与崩溃，普通办公电脑与笔记本亦可畅享海量点云极致交互。
+> 🚀 **单工程支持千亿级海量点云（Billion-scale Points）流畅漫游浏览！**  
+> 全新 64 位文件寻址架构与 V2 拓扑格式，彻底打破 21 亿点 (32位有符号上限) 行业桎梏，普通办公电脑与笔记本亦可畅享海量点云极致交互。
 
 **OctPc** 是一套面向超大规模激光雷达点云（LAS/LAZ）的现代高性能八叉树处理与三维交互可视化技术栈。采用自研高性能线性八叉树拓扑与多核空间分块调度算法，彻底攻克亿级点云导入耗时长、显存开销大、视口顿挫严重的行业难题，实现极速转换与毫秒级秒开满帧渲染。
 
@@ -22,24 +23,24 @@
 
 ## 🌟 核心特性与亮点
 
-- 🏆 **21 亿点超大容量支持，60fps 丝滑漫游**：
-  - 底层基于 64 位文件寻址架构与自适应 PagedLOD 多级视锥分块调度技术，**单工程实装承载上限高达 21.47 亿点**；
+- 🏆 **千亿级海量点云承载，全新 64 位 V2 格式**：
+  - 底层全面升级为 64 位文件寻址架构与自适应 PagedLOD 多级视锥分块调度技术，**彻底打破 21 亿点（2^31-1）容量上限，单工程支持千亿级空间点云**，向下完美兼容 V1 格式；
   - 无论点云总体量多大，前台仅按视距动态吞吐当前可见点，**常驻内存与显存仅需数百兆**，实现 60 帧满帧流畅飞行动作与自由漫游；
+- 🌐 **全栈原生中英双语支持 (Bilingual Ready)**：
+  - 全套程序（`octpc_cli` 与 `octpc_viewer`）及文档均已原生支持中英双语；
+  - 自动根据操作系统语言环境匹配界面与控制台帮助；
+  - 支持命令行参数显式指定（`--lang en` / `--lang zh`）；
+  - 3D 视口内随时按下 `[L]` 键可在中文与英文 HUD 状态栏之间无缝切换；
 - ⚡ **多核并行极速转换 (octpc_cli)**：
-  - 基于多核并发空间分块与 16MB 连续写缓冲机制，处理速度相比传统工具提速数倍；
+  - 基于多核并发空间分块与 16MB 连续写缓冲机制，处理吞吐达 800~1000 万点/秒，半亿海量点云仅需数秒；
 - 📦 **免安装绿色便携**：
-  - 解压即用，内置轻量运行库与高清中文字体，无需安装庞杂的第三方 SDK 环境；
+  - 解压即用，内置轻量运行库与高清中文字体，全套压缩包仅 2.9 MB，无需安装庞杂的第三方 SDK 环境；
 - 🎯 **原生文件交互与格式自动联动 (octpc_viewer)**：
   - 启动时自动唤起 Windows 原生文件浏览对话框，首选 `.octpc` 格式；
   - 打开原始 `.las` 文件时自动匹配同级 `.octpc`，未找到时自动调起后台转换并直接呈现；
   - 运行中随时按 `[F3]` 即可选择新点云并平滑无缝切换；
 - 🎨 **多维度科学赋色**：
-  - 原始 RGB 真彩色、激光反射强度灰度、语义分类颜色及高程动态渐变色带一键自由切换；
-- 🌐 **原生中英双语支持 (Bilingual Ready)**：
-  - 全套程序（`octpc_cli` 与 `octpc_viewer`）及文档均已原生支持中英双语；
-  - 自动根据操作系统语言环境匹配界面与控制台帮助；
-  - 支持命令行参数显式指定（`--lang en` / `--lang zh`）；
-  - 3D 视口内随时按下 `[L]` 键可在中文与英文 HUD 状态栏之间无缝切换。
+  - 原始 RGB 真彩色、激光反射强度灰度、语义分类颜色及高程动态渐变色带一键自由切换。
 
 ---
 
@@ -88,7 +89,7 @@ osg::ref_ptr<osg::Node> pointCloud = osgDB::readNodeFile("D:/data/survey.octpc",
 ```csharp
 var process = new Process();
 process.StartInfo.FileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "octpc_cli.exe");
-process.StartInfo.Arguments = "\"D:\\data\\input.las\" -d 5"; // -d 5 指定5层八叉树
+process.StartInfo.Arguments = "\"D:\\data\\input.las\" -d 5 --lang en"; // -d 5 指定5层八叉树
 process.StartInfo.CreateNoWindow = true;
 process.StartInfo.UseShellExecute = false;
 process.Start();
@@ -103,7 +104,7 @@ import subprocess
 import os
 
 # 后台静默调用八叉树转换
-cmd = ["octpc_cli.exe", "D:/data/input.las", "-d", "5"]
+cmd = ["octpc_cli.exe", "D:/data/input.las", "-d", "5", "--lang", "zh"]
 subprocess.run(cmd, check=True)
 print("转换成功，生成 D:/data/input.octpc")
 ```
@@ -139,7 +140,8 @@ print("转换成功，生成 D:/data/input.octpc")
 | **1,000 万 ~ 5,000 万点** | 无人机航测、人形点云测试集 | ~3 秒内 | **60 FPS** 满帧极速 | < 150 MB |
 | **1 亿 ~ 3 亿点** | 车载移动测量、城市级倾斜航测 | ~20 秒 | **60 FPS** 满帧丝滑 | ~300 MB |
 | **5 亿 ~ 10 亿点** | 区域级激光雷达测绘大场景 | ~1~2 分钟 | **60 FPS** 流畅漫游 | ~500 MB |
-| **最高 21.47 亿点** | 特大型国家级/全流域空间点云工程 | 支持稳定构建 | **60 FPS** 动态多级调度 | 分页受控按需调度 |
+| **21 亿 ~ 100 亿点** | 特大型国家级/城市实景三维工程 | 支持稳定构建 | **60 FPS** 动态多级调度 | 分页受控按需调度 |
+| **千亿级空间点云** | 全流域/全省域宏观地理空间测绘工程 | 64位 V2 原生支持 | **60 FPS** 分层流水线 | 分页按需动态吞吐 |
 
 ---
 
@@ -149,26 +151,29 @@ print("转换成功，生成 D:/data/input.octpc")
 
 | 分发包名称 | 体积 | 推荐适用场景 |
 | :--- | :--- | :--- |
-| **`octpc_suite_vX.X.zip`** | **约 2.9 MB** | **【推荐】一体化完整绿色套件**。内含三维查看器、格式转换工具、完整动态链接库及便捷启动脚本，解压即用。 |
-| **`octpc_cli_vX.X.zip`** | **约 230 KB** | **独立命令行转换工具精简版**。极度轻量，专供服务器端后台批处理或嵌入数据生产流水线。 |
+| **`octpc_suite_v3.0.0.zip`** | **约 2.9 MB** | **【强烈推荐】一体化完整绿色套件**。内含三维查看器、格式转换工具、完整动态链接库及便捷启动脚本，解压即用。 |
+| **`octpc_cli_v3.0.0.zip`** | **约 240 KB** | **独立命令行转换工具精简版**。极度轻量，专供服务器端后台批处理或嵌入数据生产流水线。 |
 
 ---
 
 ## 🚀 快速上手使用
 
 ### 方式一：三维交互查看器 (OctPc Viewer)
-1. 下载解压 `octpc_suite_vX.X.zip`；
-2. 双击运行 **`run_viewer.bat`** 或 **`octpc_viewer.exe`**；
+1. 下载解压 `octpc_suite_v3.0.0.zip`；
+2. 双击运行 **`octpc_viewer.exe`**（或快捷脚本 `run_viewer.bat`）；
 3. 在弹出的文件选择器中选中您的 `.octpc` 或 `.las` 文件即可浏览。
 
 ### 方式二：命令行格式转换 (OctPc CLI)
 在控制台或脚本中执行：
 ```powershell
-# 基础转换（默认 5 层八叉树深度）
+# 基础转换（默认 5 层八叉树深度，自动输出 64位 V2 格式）
 octpc_cli.exe D:\data\survey.las
 
 # 指定最大层数并强制覆盖已有文件
 octpc_cli.exe D:\data\survey.las -d 6 -f
+
+# 显式使用英文输出帮助或运行信息
+octpc_cli.exe D:\data\survey.las --lang en
 ```
 
 ---
@@ -187,7 +192,7 @@ octpc_cli.exe D:\data\survey.las -d 6 -f
 | **[F3]** | 弹出文件选择器，打开新点云文件并无缝切换 |
 | **[B]** | 循环切换视口背景色（深灰黑 / 纯黑 / 藏青夜空 / 浅灰白） |
 | **[H]** | 开启 / 关闭屏幕左上角帮助与状态 HUD 抬头面板 |
-| **[L]** | 实时切换界面中英双语 (中 ⇄ 英) |
+| **[L]** | **实时无缝切换界面中英双语 (中 ⇄ 英)** |
 | **[O] 或 [F1]** | 打开官方技术主页 |
 | **[M] 或 [F2]** | 发送技术支持与反馈邮件 |
 
@@ -196,9 +201,23 @@ octpc_cli.exe D:\data\survey.las -d 6 -f
 ## 📄 数据格式规范说明
 
 输入 `filename.las` 经转换后将生成规范的标准产物：
-1. **`filename.octpc`**：八叉树拓扑主索引文件（包围盒、全局空间偏移、属性标志位与节点位置映射）；
+1. **`filename.octpc`**：八叉树拓扑主索引文件（64 位 V2 格式，包围盒、全局空间偏移、属性标志位与节点位置映射）；
 2. **`filename.octlod`**：多级分辨率空间采样快速预览缓存文件；
 3. **`filename_oct.las`**：空间局部性优化重排后的点云几何实体文件。
+
+---
+
+## 📝 版本更新历史 (Changelog)
+
+### v3.0.0 (Latest)
+- 🚀 **全新 64 位 V2 格式**：底层八叉树索引寻址全面重构为 64 位整型，彻底打破 21 亿点（2^31-1）上限，单工程支持千亿级空间点云；向下全面兼容 V1 格式；
+- 🌐 **全栈原生中英双语**：`octpc_cli` 与 `octpc_viewer` 自动匹配系统语言；CLI 提供 `--lang zh/en` 参数，Viewer 提供 `[L]` 快捷键实时双语切换；
+- ⚡ **性能与交互强化**：优化视口 LOD 动态调度曲线，增加视口热键交互；
+- 📦 **发布包架构升级**：同步提供一体化套件 `octpc_suite_v3.0.0.zip` 与极简命令行工具 `octpc_cli_v3.0.0.zip`。
+
+### v2.0.0
+- 📦 **合二为一绿色套件**：取消拆分包，推出一体化绿色开箱即用套件；
+- 🎨 **四维着色与原生交互**：支持 RGB、反射强度、分类赋色与高程伪彩，支持原生 Windows 文件选择器与同名自动转换。
 
 ---
 
