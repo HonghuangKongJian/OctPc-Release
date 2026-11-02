@@ -4,41 +4,43 @@
 
 # OctPc - 海量点云高性能八叉树转换工具与三维交互浏览器
 
-[![GitHub release](https://img.shields.io/github/v/release/HonghuangKongJian/OctPc-Release?color=brightgreen&label=最新版本%20v3.0.0)](https://github.com/HonghuangKongJian/OctPc-Release/releases)
-[![Format](https://img.shields.io/badge/索引格式-64位%20V2-emerald.svg)](https://amw3.eu.org)
+[![GitHub release](https://img.shields.io/github/v/release/HonghuangKongJian/OctPc-Release?color=brightgreen&label=最新版本%20v4.0.0)](https://github.com/HonghuangKongJian/OctPc-Release/releases)
+[![Format](https://img.shields.io/badge/索引格式-4.0%20自包含单文件-emerald.svg)](https://amw3.eu.org)
 [![Capacity](https://img.shields.io/badge/单工程承载-千亿级点云-orange.svg)]()
-[![Performance](https://img.shields.io/badge/视口漫游-60%20FPS%20丝滑流畅-blue.svg)]()
+[![Performance](https://img.shields.io/badge/流式引擎-首帧秒开%2060FPS%20丝滑-blue.svg)]()
 [![Test Data](https://img.shields.io/badge/配套测试集-5000万点%20人形点云-green.svg)]()
-[![SDK](https://img.shields.io/badge/开发者SDK-正式推出%20v3.0.0-blueviolet.svg)](https://amw3.eu.org)
+[![SDK](https://img.shields.io/badge/开发者SDK-正式推出%20v4.0.0-blueviolet.svg)](https://amw3.eu.org)
 [![License: Dual](https://img.shields.io/badge/License-MIT%20%7C%20Commercial-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/Platform-Windows%20x64-lightgrey.svg)]()
 [![Sponsor](https://img.shields.io/badge/☕-赞赏支持-rose.svg)](#-赞赏与支持-sponsor)
 
-> 🚀 **单工程支持千亿级海量点云（Billion-scale Points）流畅漫游浏览！**  
-> 全新 64 位文件寻址架构与 V2 拓扑格式，彻底打破 21 亿点 (32位有符号上限) 行业桎梏，普通办公电脑与笔记本亦可畅享海量点云极致交互。
+> 🚀 **全面进入 OctPc 4.0 自包含单文件架构与两阶段渐进流式（边写边看）新纪元！**  
+> 彻底终结原有伴生碎片文件，多级 LOD 空间金字塔与全量点云统合于单一 `.octpc`；首创两阶段流式引擎，亿级海量点云 0.3 秒极速开窗预览，后台静默追加深层细节并自动平滑热重载！
 
 **OctPc** 是一套面向超大规模激光雷达点云（LAS/LAZ）的现代高性能八叉树处理与三维交互可视化技术栈。采用自研高性能线性八叉树拓扑与多核空间分块调度算法，彻底攻克亿级点云导入耗时长、显存开销大、视口顿挫严重的行业难题，实现极速转换与毫秒级秒开满帧渲染。
 
 ---
 
-## 🌟 核心特性与亮点
+## 🌟 核心特性与亮点 (v4.0.0 Highlights)
 
-- 🏆 **千亿级海量点云承载，全新 64 位 V2 格式**：
-  - 底层全面升级为 64 位文件寻址架构与自适应 PagedLOD 多级视锥分块调度技术，**彻底打破 21 亿点（2^31-1）容量上限，单工程支持千亿级空间点云**，向下完美兼容 V1 格式；
-  - 无论点云总体量多大，前台仅按视距动态吞吐当前可见点，**常驻内存与显存仅需数百兆**，实现 60 帧满帧流畅飞行动作与自由漫游；
+- 🏆 **OctPc 4.0 自包含单文件架构 (Single-File Self-Contained)**：
+  - 彻底淘汰原有伴生的 `_oct.las`、`.octlod`、`.octdata` 分离碎片文件；
+  - 八叉树空间拓扑元数据、多级多分辨率 LOD 空间金字塔索引、紧凑叶子点云全量封装于单一 `.octpc` 文件中；
+  - 零外部散落文件，工程迁移或网络分发只需拷贝一个 `.octpc` 单文件即可直接漫游渲染，绝不丢失数据；
+- ⚡ **两阶段渐进流式引擎（边写边看，首帧秒开）**：
+  - **阶段一（极速粗模）**：输入数千万至数亿点原始点云时，八叉树前 3 层全景粗模在 0.12 ~ 0.35 秒内即可刷盘就绪；
+  - **秒级开窗交互**：三维查看器（Viewer）嗅探到粗模就绪即刻拉起三维视口开始全景漫游，用户无需枯坐等待漫长的全量写入；
+  - **阶段二（平滑追加与热重载）**：后台静默流式追加深层采样与全量叶子点云，追加完成后查看器自动平滑热重载（Hot-Reload），无缝升级至高清终态全树；
+- 🧠 **智能自适应八叉树层数推导**：
+  - 内置基于点云总规模的动态自适应层数计算公式；
+  - 免除用户手动猜测和调优 `-d` 参数的繁琐心智负担，百亿级点云自动推导匹配最佳深度；
+- 🖥️ **Win32 原生 Unicode 纯净视口与状态监控**：
+  - 窗口标题栏全面重构为 Win32 原生 `SetWindowTextW` 宽字符管线，杜绝任何 ANSI/GBK 或特殊符号引发的字符乱码与问号；
+  - 查看器 HUD 抬头面板与窗口标题栏实时直观呈现当前运行状态（全景粗模预览中 / 完备终态单文件）、采样点数及八叉树层级；
 - 🌐 **全栈原生中英双语支持 (Bilingual Ready)**：
-  - 全套程序（`octpc_cli` 与 `octpc_viewer`）及文档均已原生支持中英双语；
-  - 自动根据操作系统语言环境匹配界面与控制台帮助；
-  - 支持命令行参数显式指定（`--lang en` / `--lang zh`）；
-  - 3D 视口内随时按下 `[L]` 键可在中文与英文 HUD 状态栏之间无缝切换；
-- ⚡ **多核并行极速转换 (octpc_cli)**：
-  - 基于多核并发空间分块与 16MB 连续写缓冲机制，处理吞吐达 800~1000 万点/秒，半亿海量点云仅需数秒；
+  - 全套程序（`octpc_cli` 与 `octpc_viewer`）及文档均已原生支持中英双语，自动识别系统语言，支持随时按 `[L]` 键切换；
 - 📦 **免安装绿色便携**：
-  - 解压即用，内置轻量运行库与高清中文字体，全套压缩包仅 2.9 MB，无需安装庞杂的第三方 SDK 环境；
-- 🎯 **原生文件交互与格式自动联动 (octpc_viewer)**：
-  - 启动时自动唤起 Windows 原生文件浏览对话框，首选 `.octpc` 格式；
-  - 打开原始 `.las` 文件时自动匹配同级 `.octpc`，未找到时自动调起后台转换并直接呈现；
-  - 运行中随时按 `[F3]` 即可选择新点云并平滑无缝切换；
+  - 解压即用，内置轻量运行库与高清中文字体，全套压缩包仅 2.97 MB，无需安装庞杂的第三方 SDK 环境；
 - 🎨 **多维度科学赋色**：
   - 原始 RGB 真彩色、激光反射强度灰度、语义分类颜色及高程动态渐变色带一键自由切换。
 
@@ -55,12 +57,12 @@
 #### 步骤 1：部署插件动态库
 将发布包中的 `osgdb_octpc.dll` 直接拷贝至客户软件运行目录下的 `osgPlugins-3.x.x/` 插件子目录（或与客户主程序 `.exe` 同目录）。
 
-#### 步骤 2：一行代码直接加载渲染
+#### 步骤 2：一行代码直接加载渲染 (4.0 自包含单文件)
 客户程序无需改动原有渲染管线，直接使用 OSG 标准接口：
 ```cpp
 #include <osgDB/ReadFile>
 
-// 1. 直接加载 .octpc 八叉树点云（OSG 插件自动接管分页多分辨率调度）
+// 1. 直接加载 .octpc 八叉树点云（OSG 插件自动接管分页多分辨率自包含单文件调度）
 osg::ref_ptr<osg::Node> pointCloud = osgDB::readNodeFile("D:/data/survey.octpc");
 
 // 2. 将节点加入三维场景总根节点
@@ -89,13 +91,13 @@ osg::ref_ptr<osg::Node> pointCloud = osgDB::readNodeFile("D:/data/survey.octpc",
 ```csharp
 var process = new Process();
 process.StartInfo.FileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "octpc_cli.exe");
-process.StartInfo.Arguments = "\"D:\\data\\input.las\" -d 5 --lang en"; // -d 5 指定5层八叉树
+process.StartInfo.Arguments = ""D:\data\input.las" --lang en"; // 自动自适应最佳层数
 process.StartInfo.CreateNoWindow = true;
 process.StartInfo.UseShellExecute = false;
 process.Start();
 process.WaitForExit();
 
-// 转换完成，生成的同名 D:\data\input.octpc 即可由渲染器接管
+// 转换完成，生成的单个 D:\data\input.octpc 自包含文件即可由渲染器接管
 ```
 
 #### Python 集成示例：
@@ -103,10 +105,10 @@ process.WaitForExit();
 import subprocess
 import os
 
-# 后台静默调用八叉树转换
-cmd = ["octpc_cli.exe", "D:/data/input.las", "-d", "5", "--lang", "zh"]
+# 后台静默调用八叉树转换（自适应层数推导）
+cmd = ["octpc_cli.exe", "D:/data/input.las", "--lang", "zh"]
 subprocess.run(cmd, check=True)
-print("转换成功，生成 D:/data/input.octpc")
+print("转换成功，生成自包含单文件 D:/data/input.octpc")
 ```
 
 ---
@@ -119,15 +121,15 @@ print("转换成功，生成 D:/data/input.octpc")
   ```bash
   python generate_humanoid.py -n 50000000 -o humanoid_50M.las
   ```
-- 生成完成后，直接双击 `run_viewer.bat` 选择或拖拽该 `humanoid_50M.las`，即可亲身体验千万级大点云在数秒内自动构建与 60fps 满帧浏览！
+- 生成完成后，直接双击运行 `octpc_viewer.exe` 选择该 `humanoid_50M.las`，即可亲身体验千万级大点云在 0.12 秒内生成粗模开窗秒开与 60fps 满帧浏览！
 
 ---
 
 ## 🧩 开发者 SDK 与双轨授权模式 (Developer SDK & Dual-License)
 
-- 🚀 **开发者 SDK 正式推出 (v3.0.0)**：已对底层核心算法与读写流全面解耦，提供纯原生 C++17 统一入口头文件 `octpc_sdk.h` 与配套示例工程；
+- 🚀 **开发者 SDK 正式推出 (v4.0.0)**：已对底层核心算法与读写流全面解耦，提供纯原生 C++17 统一入口头文件 `octpc_sdk.h` 与配套示例工程；
 - **典型赋能场景**：
-  - 轻松嵌入 GIS 平台、无人机航测后处理软件、数字孪生/BIM 引擎、CASS 等三维测绘测量系统；
+  - 轻松嵌入 GIS 平台、无人机航测后处理软件、数字孪生/BIM 引擎、三维测绘测量系统；
   - 提供海量点云自定义构建、空间索引查询、快速降采样抽稀与定制视口嵌入能力；
 - ⚖️ **双轨许可原则**：
   - **社区版 (Community)**：**功能 100% 完全开放**（单工程支持千亿级点云，无任何性能截断），渲染画面保留轻量水印标识，个人学习、科研与内部评估完全免费；
@@ -138,131 +140,68 @@ print("转换成功，生成 D:/data/input.octpc")
 
 ## 📊 数据规模与性能承载规格表
 
-| 点云规模 | 典型数据源 | 转换耗时参考 | 视口漫游帧率 | 内存 / 显存开销 |
+| 点云规模 | 典型数据源 | 阶段一粗模就绪耗时 | 视口漫游帧率 | 内存 / 显存开销 |
 | :--- | :--- | :--- | :--- | :--- |
-| **1,000 万 ~ 5,000 万点** | 无人机航测、人形点云测试集 | ~3 秒内 | **60 FPS** 满帧极速 | < 150 MB |
-| **1 亿 ~ 3 亿点** | 车载移动测量、城市级倾斜航测 | ~20 秒 | **60 FPS** 满帧丝滑 | ~300 MB |
-| **5 亿 ~ 10 亿点** | 区域级激光雷达测绘大场景 | ~1~2 分钟 | **60 FPS** 流畅漫游 | ~500 MB |
-| **21 亿 ~ 100 亿点** | 特大型国家级/城市实景三维工程 | 支持稳定构建 | **60 FPS** 动态多级调度 | 分页受控按需调度 |
-| **千亿级空间点云** | 全流域/全省域宏观地理空间测绘工程 | 64位 V2 原生支持 | **60 FPS** 分层流水线 | 分页按需动态吞吐 |
+| **1,000 万 ~ 5,000 万点** | 无人机航测、人形点云测试集 | **~0.12 秒 (首帧秒开)** | **60 FPS** 满帧极速 | < 150 MB |
+| **1 亿 ~ 3 亿点** | 车载移动测量、城市级倾斜航测 | **~0.35 秒 (首帧秒开)** | **60 FPS** 满帧丝滑 | ~300 MB |
+| **5 亿 ~ 10 亿点** | 区域级激光雷达测绘大场景 | **~1 秒内 (首帧秒开)** | **60 FPS** 流畅漫游 | ~500 MB |
+| **21 亿 ~ 100 亿点** | 特大型国家级/城市实景三维工程 | **秒级首帧呈现** | **60 FPS** 动态多级调度 | 分页受控按需调度 |
+| **千亿级空间点云** | 全流域/全省域宏观地理空间测绘工程 | 4.0 自包含单文件原生支持 | **60 FPS** 边写边看流式调度 | 分页按需动态吞吐 |
 
 ---
 
-## 📦 软件包下载
+## 📦 软件包下载 (Release Assets)
 
 请前往 👉 **[Releases 页面](https://github.com/HonghuangKongJian/OctPc-Release/releases)** 下载最新发布版：
 
 | 分发包名称 | 体积 | 推荐适用场景 |
 | :--- | :--- | :--- |
-| **`octpc_suite_v3.0.0.zip`** | **约 2.9 MB** | **【强烈推荐】一体化完整绿色套件**。内含三维查看器、格式转换工具、完整动态链接库及便捷启动脚本，解压即用。 |
-| **`octpc_cli_v3.0.0.zip`** | **约 240 KB** | **独立命令行转换工具精简版**。极度轻量，专供服务器端后台批处理或嵌入数据生产流水线。 |
+| **`octpc_suite_v4.0.0.zip`** | **约 2.97 MB** | **【强烈推荐】一体化完整绿色套件**。内含三维查看器、格式转换工具、完整动态链接库及便捷启动脚本，解压即用。 |
+| **`octpc_cli_v4.0.0.zip`** | **约 252 KB** | **独立命令行转换工具精简版**。纯静态自包含，零外部依赖，专供服务器端后台批处理或嵌入数据生产流水线。 |
+| **`octpc_sdk_v4.0.0.zip`** | **约 180 KB** | **C++ 开发者 SDK 扩展包**。内含头文件、导入库、CMake 配置与示例工程源码。 |
 
----
+### 🔒 文件 SHA-256 校验码 (Checksums)
 
-## 🚀 快速上手使用
-
-### 方式一：三维交互查看器 (OctPc Viewer)
-1. 下载解压 `octpc_suite_v3.0.0.zip`；
-2. 双击运行 **`octpc_viewer.exe`**（或快捷脚本 `run_viewer.bat`）；
-3. 在弹出的文件选择器中选中您的 `.octpc` 或 `.las` 文件即可浏览。
-
-### 方式二：命令行格式转换 (OctPc CLI)
-在控制台或脚本中执行：
-```powershell
-# 基础转换（默认 5 层八叉树深度，自动输出 64位 V2 格式）
-octpc_cli.exe D:\data\survey.las
-
-# 指定最大层数并强制覆盖已有文件
-octpc_cli.exe D:\data\survey.las -d 6 -f
-
-# 显式使用英文输出帮助或运行信息
-octpc_cli.exe D:\data\survey.las --lang en
+```text
+0FA120C23984A7A3BCECE5173660060D927D5A74ED1BD3E3D4B8B16524AA86E2  octpc_suite_v4.0.0.zip
+9E231E984A9836645B5AA5D7AD7FB3A5C99677BED9374D44E97AEF19D3304CAE  octpc_cli_v4.0.0.zip
+5BCF124E271ED409CFEC5EECBF6E9668BBE68DAC8B43E11403D828D05C46086E  octpc_sdk_v4.0.0.zip
 ```
 
 ---
 
-## ⌨️ 查看器快捷键操作指南
+## ⌨️ 常用快捷键一览
 
-| 按键 / 操作 | 功能说明 |
+| 按键 | 说明 |
 | :--- | :--- |
-| **鼠标左键拖拽** | 三维轨道球旋转 |
-| **鼠标滚轮** | 视角推拉缩放 |
-| **空格键 [Space]** | 快速将相机居中对齐到点云中心 |
+| **[Space]** | 视角快速居中至点云中心 |
 | **[1] / [2]** | 切换为【原始 RGB 真彩】 / 【激光反射强度】模式 |
 | **[3] / [4]** | 切换为【点云分类赋色】 / 【高程动态色带】模式 |
-| **[+] / [-]** | 实时放大 / 缩小点渲染尺寸（Point Size） |
-| **[ [ ] / [ ] ]** | 增减 LOD 视距加载灵敏度倍率 |
-| **[F3]** | 弹出文件选择器，打开新点云文件并无缝切换 |
-| **[B]** | 循环切换视口背景色（深灰黑 / 纯黑 / 藏青夜空 / 浅灰白） |
-| **[H]** | 开启 / 关闭屏幕左上角帮助与状态 HUD 抬头面板 |
+| **[+] / [-]** | 实时放大 / 缩小点渲染尺寸 (Point Size) |
+| **[ [ ] / [ ] ]** | 增减 LOD 细化加载距离倍率 |
+| **[F3]** | 弹出文件选择器更换点云 |
+| **[B]** | 循环切换视口背景色 (深灰黑 / 纯黑 / 藏青夜空 / 浅灰白) |
+| **[H]** | 开启 / 关闭左上角 HUD 抬头显示 |
 | **[L]** | **实时无缝切换界面中英双语 (中 ⇄ 英)** |
-| **[O] 或 [F1]** | 打开官方技术主页 |
-| **[M] 或 [F2]** | 发送技术支持与反馈邮件 |
-
----
-
-## 📄 数据格式规范说明
-
-输入 `filename.las` 经转换后将生成规范的标准产物：
-1. **`filename.octpc`**：八叉树拓扑主索引文件（64 位 V2 格式，包围盒、全局空间偏移、属性标志位与节点位置映射）；
-2. **`filename.octlod`**：多级分辨率空间采样快速预览缓存文件；
-3. **`filename_oct.las`**：空间局部性优化重排后的点云几何实体文件。
-
----
-
-## 📝 版本更新历史 (Changelog)
-
-### v3.0.0 (Latest)
-- 🚀 **全新 64 位 V2 格式**：底层八叉树索引寻址全面重构为 64 位整型，彻底打破 21 亿点（2^31-1）上限，单工程支持千亿级空间点云；向下全面兼容 V1 格式；
-- 🌐 **全栈原生中英双语**：`octpc_cli` 与 `octpc_viewer` 自动匹配系统语言；CLI 提供 `--lang zh/en` 参数，Viewer 提供 `[L]` 快捷键实时双语切换；
-- ⚡ **性能与交互强化**：优化视口 LOD 动态调度曲线，增加视口热键交互；
-- 📦 **发布包架构升级**：同步提供一体化套件 `octpc_suite_v3.0.0.zip` 与极简命令行工具 `octpc_cli_v3.0.0.zip`。
-
-### v2.0.0
-- 📦 **合二为一绿色套件**：取消拆分包，推出一体化绿色开箱即用套件；
-- 🎨 **四维着色与原生交互**：支持 RGB、反射强度、分类赋色与高程伪彩，支持原生 Windows 文件选择器与同名自动转换。
-
----
-
-## 🌐 官方支持与联系
-
-- **官方技术主页**：[https://amw3.eu.org](https://amw3.eu.org)
-- **技术支持邮箱**：[19053936@qq.com](mailto:19053936@qq.com)
-- **问题反馈与建议**：欢迎在 [GitHub Issues](https://github.com/HonghuangKongJian/OctPc-Release/issues) 中提交数据格式兼容性反馈。
-- **开源许可证**：[MIT License](LICENSE)
+| **[F1]** | 快捷访问官方主页 |
+| **[F2]** | 快捷联系反馈作者 |
 
 ---
 
 ## ☕ 赞赏与支持 (Sponsor)
 
-如果您觉得 **OctPc** 对您的工作、学习、科学研究或数字孪生/GIS工程开发有所帮助，欢迎赞赏支持作者！您的每一份鼓励都是我们持续演进八叉树算法、提升吞吐性能与坚持开源免费的最大动力！
+如果您觉得本项目对您的工作、学习或商业研发有所帮助，欢迎赞赏支持作者持续迭代！您的每一份认可都是底层架构持续创新的最强动力：
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center" width="320">
-        <a href="https://amw3.eu.org">
-          <img src="docs/images/wechat-reward.png" width="220" alt="微信赞赏码" />
-        </a>
-        <br/>
-        <b>🟢 微信赞赏支持</b>
-        <br/>
-        <sub>打开手机微信扫一扫</sub>
-      </td>
-      <td align="center" width="320">
-        <a href="https://amw3.eu.org">
-          <img src="docs/images/alipay-reward.png" width="220" alt="支付宝收款码" />
-        </a>
-        <br/>
-        <b>🔵 支付宝收款支持</b>
-        <br/>
-        <sub>打开手机支付宝扫一扫</sub>
-      </td>
-    </tr>
-  </table>
-  <br/>
-  <p>
-    🌐 <b>洪荒空间门户矩阵</b>：<a href="https://amw3.eu.org">https://amw3.eu.org</a><br/>
-    📧 <b>联系与技术交流邮箱</b>：<a href="mailto:19053936@qq.com">19053936@qq.com</a>
-  </p>
-</div>
+<p align="center">
+  <img src="docs/sponsor_wechat.png" alt="微信赞赏" width="260" style="margin-right: 30px; display: inline-block;" />
+  <img src="docs/sponsor_alipay.png" alt="支付宝赞赏" width="260" style="display: inline-block;" />
+</p>
+<p align="center">
+  <i>微信赞赏码（左） &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 支付宝收款码（右）</i>
+</p>
+
+---
+
+- 🌐 **洪荒空间门户矩阵**：https://amw3.eu.org
+- 📧 **技术支持与交流邮箱**：19053936@qq.com
+- ⚖️ **开源许可证**：[MIT License](LICENSE)
