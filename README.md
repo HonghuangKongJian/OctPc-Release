@@ -9,7 +9,6 @@
 [![Capacity](https://img.shields.io/badge/单工程承载-千亿级点云-orange.svg)]()
 [![Performance](https://img.shields.io/badge/流式引擎-首帧秒开%2060FPS%20丝滑-blue.svg)]()
 [![Test Data](https://img.shields.io/badge/配套测试集-5000万点%20人形点云-green.svg)]()
-[![SDK](https://img.shields.io/badge/开发者SDK-正式推出%20v4.0.0-blueviolet.svg)](https://amw3.eu.org)
 [![License: Dual](https://img.shields.io/badge/License-MIT%20%7C%20Commercial-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/Platform-Windows%20x64-lightgrey.svg)]()
 [![Sponsor](https://img.shields.io/badge/☕-赞赏支持-rose.svg)](#-赞赏与支持-sponsor)
@@ -125,9 +124,9 @@ print("转换成功，生成自包含单文件 D:/data/input.octpc")
 
 ---
 
-## 🧩 开发者 SDK 与双轨授权模式 (Developer SDK & Dual-License)
+## 🧩 开发者 SDK (开发孵化中) 与双轨授权模式 (Developer SDK & Dual-License)
 
-- 🚀 **开发者 SDK 正式推出 (v4.0.0)**：已对底层核心算法与读写流全面解耦，提供纯原生 C++17 统一入口头文件 `octpc_sdk.h` 与配套示例工程；
+- 🚀 **底层核心解耦演进中**：正持续对底层八叉树算法与自包含单文件流进行标准化 C++17 API 提炼，成熟完备后将正式推出对外 SDK；
 - **典型赋能场景**：
   - 轻松嵌入 GIS 平台、无人机航测后处理软件、数字孪生/BIM 引擎、三维测绘测量系统；
   - 提供海量点云自定义构建、空间索引查询、快速降采样抽稀与定制视口嵌入能力；
@@ -158,14 +157,12 @@ print("转换成功，生成自包含单文件 D:/data/input.octpc")
 | :--- | :--- | :--- |
 | **`octpc_suite_v4.0.0.zip`** | **约 2.97 MB** | **【强烈推荐】一体化完整绿色套件**。内含三维查看器、格式转换工具、完整动态链接库及便捷启动脚本，解压即用。 |
 | **`octpc_cli_v4.0.0.zip`** | **约 252 KB** | **独立命令行转换工具精简版**。纯静态自包含，零外部依赖，专供服务器端后台批处理或嵌入数据生产流水线。 |
-| **`octpc_sdk_v4.0.0.zip`** | **约 180 KB** | **C++ 开发者 SDK 扩展包**。内含头文件、导入库、CMake 配置与示例工程源码。 |
 
 ### 🔒 文件 SHA-256 校验码 (Checksums)
 
 ```text
 0FA120C23984A7A3BCECE5173660060D927D5A74ED1BD3E3D4B8B16524AA86E2  octpc_suite_v4.0.0.zip
 9E231E984A9836645B5AA5D7AD7FB3A5C99677BED9374D44E97AEF19D3304CAE  octpc_cli_v4.0.0.zip
-5BCF124E271ED409CFEC5EECBF6E9668BBE68DAC8B43E11403D828D05C46086E  octpc_sdk_v4.0.0.zip
 ```
 
 ---

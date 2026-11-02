@@ -8,7 +8,6 @@
 [![Format](https://img.shields.io/badge/Format-4.0%20Single--File-emerald.svg)](https://amw3.eu.org)
 [![Capacity](https://img.shields.io/badge/Scale-Billion--Points-orange.svg)]()
 [![Performance](https://img.shields.io/badge/Streaming-Sub--Second%20Preview%2060FPS-blue.svg)]()
-[![SDK](https://img.shields.io/badge/SDK-v4.0.0%20Available-blueviolet.svg)](https://amw3.eu.org)
 [![License: Dual](https://img.shields.io/badge/License-MIT%20%7C%20Commercial-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/Platform-Windows%20x64-lightgrey.svg)]()
 
@@ -47,14 +46,12 @@ Please visit the 👉 **[Releases Page](https://github.com/HonghuangKongJian/Oct
 | :--- | :--- | :--- |
 | **`octpc_suite_v4.0.0.zip`** | **~2.97 MB** | **[Recommended] All-in-One Portable Suite**. Contains 3D Viewer, CLI tool, DLL dependencies, and start scripts. |
 | **`octpc_cli_v4.0.0.zip`** | **~252 KB** | **Standalone CLI Indexer Tool**. Pure static self-contained, zero external dependencies, perfect for server batch pipelines. |
-| **`octpc_sdk_v4.0.0.zip`** | **~180 KB** | **C++ Developer SDK**. Includes headers, import libs, CMake config, and example projects. |
 
 ### 🔒 SHA-256 Checksums
 
 ```text
 0FA120C23984A7A3BCECE5173660060D927D5A74ED1BD3E3D4B8B16524AA86E2  octpc_suite_v4.0.0.zip
 9E231E984A9836645B5AA5D7AD7FB3A5C99677BED9374D44E97AEF19D3304CAE  octpc_cli_v4.0.0.zip
-5BCF124E271ED409CFEC5EECBF6E9668BBE68DAC8B43E11403D828D05C46086E  octpc_sdk_v4.0.0.zip
 ```
 
 ---
