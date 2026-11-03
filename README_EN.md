@@ -4,7 +4,7 @@
 
 # OctPc - High-Performance Point Cloud Octree Indexer & 3D Interactive Viewer
 
-[![GitHub release](https://img.shields.io/github/v/release/HonghuangKongJian/OctPc-Release?color=brightgreen&label=Latest%20v4.0.0)](https://github.com/HonghuangKongJian/OctPc-Release/releases)
+[![GitHub release](https://img.shields.io/github/v/release/HonghuangKongJian/OctPc-Release?color=brightgreen&label=Latest%20v4.0.1)](https://github.com/HonghuangKongJian/OctPc-Release/releases)
 [![Format](https://img.shields.io/badge/Format-4.0%20Single--File-emerald.svg)](https://amw3.eu.org)
 [![Capacity](https://img.shields.io/badge/Scale-Billion--Points-orange.svg)]()
 [![Performance](https://img.shields.io/badge/Streaming-Sub--Second%20Preview%2060FPS-blue.svg)]()
@@ -18,7 +18,7 @@
 
 ---
 
-## 🌟 Highlights of v4.0.0
+## 🌟 Highlights of v4.0.1
 
 - 🏆 **OctPc 4.0 Self-Contained Single-File Architecture**:
   - Eliminates auxiliary companion files (`_oct.las`, `.octlod`, `.octdata`);
@@ -34,7 +34,10 @@
   - Fully migrated window title bar to Win32 native `SetWindowTextW` wide-string API;
   - Real-time status display in HUD and title bar;
 - 🌐 **Native Bilingual Support (Chinese & English)**;
-- 📦 **Zero-Installation Green Portable Suite (2.97 MB)**.
+- 🎯 **Real-Time 3D Point Coordinate Picker**: Real-time calculation and display of hovered point coordinates (X, Y, Z) with one-click [C] shortcut to copy to clipboard;
+- 🔄 **Intuitive Viewport Zoom Experience**: Reversed mouse wheel zoom direction to match industry CAD/GIS standards;
+- 🛡️ **Native Chinese & Unicode Path Compatibility**: Full-pipeline Unicode path resolving, eliminating Windows path transcoding errors and crashes;
+- 📦 **Zero-Installation Green Portable Suite (2.98 MB)**.
 
 ---
 
@@ -44,14 +47,14 @@ Please visit the 👉 **[Releases Page](https://github.com/HonghuangKongJian/Oct
 
 | Package | Size | Description |
 | :--- | :--- | :--- |
-| **`octpc_suite_v4.0.0.zip`** | **~2.97 MB** | **[Recommended] All-in-One Portable Suite**. Contains 3D Viewer, CLI tool, DLL dependencies, and start scripts. |
-| **`octpc_cli_v4.0.0.zip`** | **~252 KB** | **Standalone CLI Indexer Tool**. Pure static self-contained, zero external dependencies, perfect for server batch pipelines. |
+| **`octpc_suite_v4.0.1.zip`** | **~2.97 MB** | **[Recommended] All-in-One Portable Suite**. Contains 3D Viewer, CLI tool, DLL dependencies, and start scripts. |
+| **`octpc_cli_v4.0.1.zip`** | **~252 KB** | **Standalone CLI Indexer Tool**. Pure static self-contained, zero external dependencies, perfect for server batch pipelines. |
 
 ### 🔒 SHA-256 Checksums
 
 ```text
-0FA120C23984A7A3BCECE5173660060D927D5A74ED1BD3E3D4B8B16524AA86E2  octpc_suite_v4.0.0.zip
-9E231E984A9836645B5AA5D7AD7FB3A5C99677BED9374D44E97AEF19D3304CAE  octpc_cli_v4.0.0.zip
+A465BE8D3931069A3162C7EC0E15A9BFA0DA7D8585DFA7D58E23E04588E68CBE  octpc_suite_v4.0.1.zip
+211500354C85670248CE7CEC9B1D5EA459B3DABBD3FDAD60FC77F15C58236CC8  octpc_cli_v4.0.1.zip
 ```
 
 ---

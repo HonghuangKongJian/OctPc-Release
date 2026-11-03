@@ -4,7 +4,7 @@
 
 # OctPc - 海量点云高性能八叉树转换工具与三维交互浏览器
 
-[![GitHub release](https://img.shields.io/github/v/release/HonghuangKongJian/OctPc-Release?color=brightgreen&label=最新版本%20v4.0.0)](https://github.com/HonghuangKongJian/OctPc-Release/releases)
+[![GitHub release](https://img.shields.io/github/v/release/HonghuangKongJian/OctPc-Release?color=brightgreen&label=最新版本%20v4.0.1)](https://github.com/HonghuangKongJian/OctPc-Release/releases)
 [![Format](https://img.shields.io/badge/索引格式-4.0%20自包含单文件-emerald.svg)](https://amw3.eu.org)
 [![Capacity](https://img.shields.io/badge/单工程承载-千亿级点云-orange.svg)]()
 [![Performance](https://img.shields.io/badge/流式引擎-首帧秒开%2060FPS%20丝滑-blue.svg)]()
@@ -20,7 +20,7 @@
 
 ---
 
-## 🌟 核心特性与亮点 (v4.0.0 Highlights)
+## 🌟 核心特性与亮点 (v4.0.1 Highlights)
 
 - 🏆 **OctPc 4.0 自包含单文件架构 (Single-File Self-Contained)**：
   - 彻底淘汰原有伴生的 `_oct.las`、`.octlod`、`.octdata` 分离碎片文件；
@@ -40,6 +40,14 @@
   - 全套程序（`octpc_cli` 与 `octpc_viewer`）及文档均已原生支持中英双语，自动识别系统语言，支持随时按 `[L]` 键切换；
 - 📦 **免安装绿色便携**：
   - 解压即用，内置轻量运行库与高清中文字体，全套压缩包仅 2.97 MB，无需安装庞杂的第三方 SDK 环境；
+- 🎯 **三维点云坐标实时测量与拾取 (Real-Time 3D Coordinate Picker)**：
+  - 鼠标在视口滑过时，状态栏毫秒级高灵敏度动态计算并呈现光标附近点云的三维真实空间坐标（X, Y, Z）；
+  - 支持快捷键 [C] 极速复制当前测量点坐标到系统剪贴板，极大方便工程复核与点云质检；
+- 🔄 **交互手感优化 (Optimized Viewport Zoom Interaction)**：
+  - 深度对调优化鼠标滚轮视距缩放方向，滚轮操作体验与主流 CAD/GIS 专业软件全面统一；
+- 🛡️ **复杂中文路径彻底兼容与运行日志防护**：
+  - 构建全链路原生 Unicode 路径中台，彻底根治 Windows 下中文文件夹或文件名引发的转码异常与闪退崩溃；
+  - 内置持久化磁盘运行日志 (octpc_viewer.log) 与系统级崩溃转储拦截机制，工业级稳健；
 - 🎨 **多维度科学赋色**：
   - 原始 RGB 真彩色、激光反射强度灰度、语义分类颜色及高程动态渐变色带一键自由切换。
 
@@ -155,14 +163,14 @@ print("转换成功，生成自包含单文件 D:/data/input.octpc")
 
 | 分发包名称 | 体积 | 推荐适用场景 |
 | :--- | :--- | :--- |
-| **`octpc_suite_v4.0.0.zip`** | **约 2.97 MB** | **【强烈推荐】一体化完整绿色套件**。内含三维查看器、格式转换工具、完整动态链接库及便捷启动脚本，解压即用。 |
-| **`octpc_cli_v4.0.0.zip`** | **约 252 KB** | **独立命令行转换工具精简版**。纯静态自包含，零外部依赖，专供服务器端后台批处理或嵌入数据生产流水线。 |
+| **`octpc_suite_v4.0.1.zip`** | **约 2.97 MB** | **【强烈推荐】一体化完整绿色套件**。内含三维查看器、格式转换工具、完整动态链接库及便捷启动脚本，解压即用。 |
+| **`octpc_cli_v4.0.1.zip`** | **约 252 KB** | **独立命令行转换工具精简版**。纯静态自包含，零外部依赖，专供服务器端后台批处理或嵌入数据生产流水线。 |
 
 ### 🔒 文件 SHA-256 校验码 (Checksums)
 
 ```text
-0FA120C23984A7A3BCECE5173660060D927D5A74ED1BD3E3D4B8B16524AA86E2  octpc_suite_v4.0.0.zip
-9E231E984A9836645B5AA5D7AD7FB3A5C99677BED9374D44E97AEF19D3304CAE  octpc_cli_v4.0.0.zip
+A465BE8D3931069A3162C7EC0E15A9BFA0DA7D8585DFA7D58E23E04588E68CBE  octpc_suite_v4.0.1.zip
+211500354C85670248CE7CEC9B1D5EA459B3DABBD3FDAD60FC77F15C58236CC8  octpc_cli_v4.0.1.zip
 ```
 
 ---
@@ -176,6 +184,7 @@ print("转换成功，生成自包含单文件 D:/data/input.octpc")
 | **[3] / [4]** | 切换为【点云分类赋色】 / 【高程动态色带】模式 |
 | **[+] / [-]** | 实时放大 / 缩小点渲染尺寸 (Point Size) |
 | **[ [ ] / [ ] ]** | 增减 LOD 细化加载距离倍率 |
+| **[C]** | **复制当前鼠标悬停点真实三维空间坐标至系统剪贴板** |
 | **[F3]** | 弹出文件选择器更换点云 |
 | **[B]** | 循环切换视口背景色 (深灰黑 / 纯黑 / 藏青夜空 / 浅灰白) |
 | **[H]** | 开启 / 关闭左上角 HUD 抬头显示 |
