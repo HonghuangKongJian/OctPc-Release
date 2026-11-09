@@ -16,6 +16,8 @@
 
 **OctPc** is a state-of-the-art high-performance octree processing and 3D interactive visualization toolchain designed for massive LiDAR point clouds (LAS/LAZ). Powered by proprietary linear octree topology and multi-threaded spatial chunking algorithms, OctPc conquers the challenges of sluggish import, excessive memory footprint, and viewport stutter.
 
+> 📰 **Featured Bilingual Blog Post**: 👉 [50M Points Converted in 10s with 50%+ Size Reduction! Full Feature Guide (Bilingual)](docs/BLOG_V5_RELEASE.md) ｜ [Read Online](https://blog.amw3.eu.org/?p=71)
+
 ---
 
 ## 🌟 Highlights of v5.0.0
