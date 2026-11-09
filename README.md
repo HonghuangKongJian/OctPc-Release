@@ -165,15 +165,15 @@ print("转换成功，生成自包含单文件 D:/data/input.octpc")
 
 | 分发包名称 | 体积 | 推荐适用场景 |
 | :--- | :--- | :--- |
-| **`octpc_suite_v4.0.1.zip`** | **约 2.97 MB** | **【强烈推荐】一体化完整绿色套件**。内含三维查看器、格式转换工具、完整动态链接库及便捷启动脚本，解压即用。 |
-| **`octpc_cli_v4.0.1.zip`** | **约 252 KB** | **独立命令行转换工具精简版**。纯静态自包含，零外部依赖，专供服务器端后台批处理或嵌入数据生产流水线。 |
+| **octpc_viewer_v5.0.0.zip** | **~3.30 MB** | **【强烈推荐】纯三维浏览器绿色套件 (Viewer Edition)**。专为超大点云流畅浏览优化，去除土方与调试开销，解压即用。 |
+| **octpc_cli_v5.0.0.zip** | **~306 KB** | **独立命令行转换工具精简版 (CLI)**。纯静态自包含，零外部依赖，专供服务器端后台批处理或嵌入数据生产流水线。 |
 
 ### 🔒 文件 SHA-256 校验码 (Checksums)
 
 ```text
-D035799ADDAE12135A14D6D6BFD6961535661328C3A16E15F057AD525C52DE12  octpc_viewer_v5.0.0.zip
-D035799ADDAE12135A14D6D6BFD6961535661328C3A16E15F057AD525C52DE12  octpc_suite_v5.0.0.zip
-07EC61758E442A0D1C88AB8354B81DEE92A5A622D570611E24678B71E3029FCD  octpc_cli_v5.0.0.zip
+CD8D33FFC2F2FB57EBF065CDD779B3991CC7299ACC349B67F3E52B958B0722F3  octpc_viewer_v5.0.0.zip
+CD8D33FFC2F2FB57EBF065CDD779B3991CC7299ACC349B67F3E52B958B0722F3  octpc_suite_v5.0.0.zip
+B8707A96B88C30C5476AD05A2D4F626CB64A672730951403A557419DB790805F  octpc_cli_v5.0.0.zip
 ```
 
 ---
