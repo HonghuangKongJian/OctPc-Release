@@ -47,8 +47,8 @@ Please visit the 👉 **[Releases Page](https://github.com/HonghuangKongJian/Oct
 
 | Package | Size | Description |
 | :--- | :--- | :--- |
-| **`octpc_suite_v4.0.1.zip`** | **~2.97 MB** | **[Recommended] All-in-One Portable Suite**. Contains 3D Viewer, CLI tool, DLL dependencies, and start scripts. |
-| **`octpc_cli_v4.0.1.zip`** | **~252 KB** | **Standalone CLI Indexer Tool**. Pure static self-contained, zero external dependencies, perfect for server batch pipelines. |
+| **`octpc_viewer_v5.0.0.zip`** | **~2.97 MB** | **[Recommended] All-in-One Portable Suite**. Contains 3D Viewer, CLI tool, DLL dependencies, and start scripts. |
+| **`octpc_cli_v5.0.0.zip`** | **~252 KB** | **Standalone CLI Indexer Tool**. Pure static self-contained, zero external dependencies, perfect for server batch pipelines. |
 
 ### 🔒 SHA-256 Checksums
 

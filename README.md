@@ -200,8 +200,8 @@ D035799ADDAE12135A14D6D6BFD6961535661328C3A16E15F057AD525C52DE12  octpc_suite_v5
 如果您觉得本项目对您的工作、学习或商业研发有所帮助，欢迎赞赏支持作者持续迭代！您的每一份认可都是底层架构持续创新的最强动力：
 
 <p align="center">
-  <img src="docs/sponsor_wechat.png" alt="微信赞赏" width="260" style="margin-right: 30px; display: inline-block;" />
-  <img src="docs/sponsor_alipay.png" alt="支付宝赞赏" width="260" style="display: inline-block;" />
+  <img src="docs/images/wechat-reward.png" alt="微信赞赏" width="260" style="margin-right: 30px; display: inline-block;" />
+  <img src="docs/images/alipay-reward.png" alt="支付宝赞赏" width="260" style="display: inline-block;" />
 </p>
 <p align="center">
   <i>微信赞赏码（左） &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 支付宝收款码（右）</i>
