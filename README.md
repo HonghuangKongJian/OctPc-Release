@@ -4,7 +4,7 @@
 
 # OctPc - 海量点云高性能八叉树转换工具与三维交互浏览器
 
-[![GitHub release](https://img.shields.io/github/v/release/HonghuangKongJian/OctPc-Release?color=brightgreen&label=最新版本%20v4.0.1)](https://github.com/HonghuangKongJian/OctPc-Release/releases)
+[![GitHub release](https://img.shields.io/github/v/release/HonghuangKongJian/OctPc-Release?color=brightgreen&label=最新版本%20v5.0.0)](https://github.com/HonghuangKongJian/OctPc-Release/releases)
 [![Format](https://img.shields.io/badge/索引格式-4.0%20自包含单文件-emerald.svg)](https://amw3.eu.org)
 [![Capacity](https://img.shields.io/badge/单工程承载-千亿级点云-orange.svg)]()
 [![Performance](https://img.shields.io/badge/流式引擎-首帧秒开%2060FPS%20丝滑-blue.svg)]()
@@ -20,7 +20,7 @@
 
 ---
 
-## 🌟 核心特性与亮点 (v4.0.1 Highlights)
+## 🌟 核心特性与亮点 (v5.0.0 Highlights)
 
 - 🏆 **OctPc 4.0 自包含单文件架构 (Single-File Self-Contained)**：
   - 彻底淘汰原有伴生的 `_oct.las`、`.octlod`、`.octdata` 分离碎片文件；
@@ -169,8 +169,9 @@ print("转换成功，生成自包含单文件 D:/data/input.octpc")
 ### 🔒 文件 SHA-256 校验码 (Checksums)
 
 ```text
-75719F5F7FDFCCDAE59F1069DC4C664003E26D56B8F62C187FEA09104213F1C4  octpc_suite_v4.0.1.zip
-8AD7C7CE41E22C5D4467F97EB534C391CC690ACB338CF984A6B2B75C4C91C4C1  octpc_cli_v4.0.1.zip
+D035799ADDAE12135A14D6D6BFD6961535661328C3A16E15F057AD525C52DE12  octpc_viewer_v5.0.0.zip
+D035799ADDAE12135A14D6D6BFD6961535661328C3A16E15F057AD525C52DE12  octpc_suite_v5.0.0.zip
+07EC61758E442A0D1C88AB8354B81DEE92A5A622D570611E24678B71E3029FCD  octpc_cli_v5.0.0.zip
 ```
 
 ---
