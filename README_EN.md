@@ -37,9 +37,10 @@
   - Real-time status display in HUD and title bar;
 - 🌐 **Native Bilingual Support (Chinese & English)**;
 - 🎯 **Real-Time 3D Point Coordinate Picker**: Real-time calculation and display of hovered point coordinates (X, Y, Z) with one-click [C] shortcut to copy to clipboard;
+- 🗂️ **Multi-Cloud Overlay & Layer Management**: Supports opening multiple point cloud files in one viewport with a dedicated layers management panel (`[M]`), per-layer visibility toggles, Zoom-to-cloud focus, and layer unloading;
 - 🔄 **Intuitive Viewport Zoom Experience**: Reversed mouse wheel zoom direction to match industry CAD/GIS standards;
 - 🛡️ **Native Chinese & Unicode Path Compatibility**: Full-pipeline Unicode path resolving, eliminating Windows path transcoding errors and crashes;
-- 📦 **Zero-Installation Green Portable Suite (2.98 MB)**.
+- 📦 **Zero-Installation Green Portable Suite (~3.42 MB)**.
 
 ---
 
@@ -49,14 +50,14 @@ Please visit the 👉 **[Releases Page](https://github.com/HonghuangKongJian/Oct
 
 | Package | Size | Description |
 | :--- | :--- | :--- |
-| **`octpc_viewer_v5.0.0.zip`** | **~2.97 MB** | **[Recommended] All-in-One Portable Suite**. Contains 3D Viewer, CLI tool, DLL dependencies, and start scripts. |
-| **`octpc_cli_v5.0.0.zip`** | **~252 KB** | **Standalone CLI Indexer Tool**. Pure static self-contained, zero external dependencies, perfect for server batch pipelines. |
+| **`octpc_viewer_v5.0.0.zip`** | **~3.42 MB** | **[Recommended] Pure 3D Point Cloud Viewer Suite (Viewer Edition)**. Highly optimized for massive point clouds, zero setup, uncompress and run. |
+| **`octpc_cli_v5.0.0.zip`** | **~306 KB** | **Standalone CLI Indexer Tool**. Pure static self-contained, zero external dependencies, perfect for server batch pipelines. |
 
 ### 🔒 SHA-256 Checksums
 
 ```text
-CD8D33FFC2F2FB57EBF065CDD779B3991CC7299ACC349B67F3E52B958B0722F3  octpc_viewer_v5.0.0.zip
-CD8D33FFC2F2FB57EBF065CDD779B3991CC7299ACC349B67F3E52B958B0722F3  octpc_suite_v5.0.0.zip
+CC0B4524EE27DD64CD8659F92F59261BCC9A061A51A9F51532F453D7FCB0A232  octpc_viewer_v5.0.0.zip
+CC0B4524EE27DD64CD8659F92F59261BCC9A061A51A9F51532F453D7FCB0A232  octpc_suite_v5.0.0.zip
 B8707A96B88C30C5476AD05A2D4F626CB64A672730951403A557419DB790805F  octpc_cli_v5.0.0.zip
 ```
 
