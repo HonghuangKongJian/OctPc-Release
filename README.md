@@ -4,7 +4,7 @@
 
 # OctPc - 海量点云高性能八叉树转换工具与三维交互浏览器
 
-[![GitHub release](https://img.shields.io/github/v/release/HonghuangKongJian/OctPc-Release?color=brightgreen&label=最新版本%20v5.0.0)](https://github.com/HonghuangKongJian/OctPc-Release/releases)
+[![GitHub release](https://img.shields.io/github/v/release/HonghuangKongJian/OctPc-Release?color=brightgreen&label=最新版本%20v5.1.0)](https://github.com/HonghuangKongJian/OctPc-Release/releases)
 [![Format](https://img.shields.io/badge/索引格式-4.0%20自包含单文件-emerald.svg)](https://amw3.eu.org)
 [![Capacity](https://img.shields.io/badge/单工程承载-千亿级点云-orange.svg)]()
 [![Performance](https://img.shields.io/badge/流式引擎-首帧秒开%2060FPS%20丝滑-blue.svg)]()
@@ -22,7 +22,7 @@
 
 ---
 
-## 🌟 核心特性与亮点 (v5.0.0 Highlights)
+## 🌟 核心特性与亮点 (v5.1.0 Highlights)
 
 - 🏆 **OctPc 4.0 自包含单文件架构 (Single-File Self-Contained)**：
   - 彻底淘汰原有伴生的 `_oct.las`、`.octlod`、`.octdata` 分离碎片文件；
@@ -168,15 +168,15 @@ print("转换成功，生成自包含单文件 D:/data/input.octpc")
 
 | 分发包名称 | 体积 | 推荐适用场景 |
 | :--- | :--- | :--- |
-| **octpc_viewer_v5.0.0.zip** | **~3.42 MB** | **【强烈推荐】纯三维浏览器绿色套件 (Viewer Edition)**。专为超大点云流畅浏览优化，去除土方与调试开销，解压即用。 |
-| **octpc_cli_v5.0.0.zip** | **~306 KB** | **独立命令行转换工具精简版 (CLI)**。纯静态自包含，零外部依赖，专供服务器端后台批处理或嵌入数据生产流水线。 |
+| **octpc_viewer_v5.1.0.zip** | **~3.42 MB** | **【强烈推荐】纯三维浏览器绿色套件 (Viewer Edition)**。专为超大点云流畅浏览优化，去除土方与调试开销，解压即用。 |
+| **octpc_cli_v5.1.0.zip** | **~317 KB** | **独立命令行转换工具精简版 (CLI)**。纯静态自包含，零外部依赖，专供服务器端后台批处理或嵌入数据生产流水线。 |
 
 ### 🔒 文件 SHA-256 校验码 (Checksums)
 
 ```text
-CC0B4524EE27DD64CD8659F92F59261BCC9A061A51A9F51532F453D7FCB0A232  octpc_viewer_v5.0.0.zip
-CC0B4524EE27DD64CD8659F92F59261BCC9A061A51A9F51532F453D7FCB0A232  octpc_suite_v5.0.0.zip
-B8707A96B88C30C5476AD05A2D4F626CB64A672730951403A557419DB790805F  octpc_cli_v5.0.0.zip
+81DD66C63EE7A11370CEE0E6D5A8867221002196A1331B39C00BC113C2175E53  octpc_viewer_v5.1.0.zip
+81DD66C63EE7A11370CEE0E6D5A8867221002196A1331B39C00BC113C2175E53  octpc_suite_v5.1.0.zip
+4BF1C6A71BF1459234DA1A94E9E02D84D155F92C3565CFE374C161F7FD5C4238  octpc_cli_v5.1.0.zip
 ```
 
 ---

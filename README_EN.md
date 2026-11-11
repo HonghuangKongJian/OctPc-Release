@@ -4,7 +4,7 @@
 
 # OctPc - High-Performance Point Cloud Octree Indexer & 3D Interactive Viewer
 
-[![GitHub release](https://img.shields.io/github/v/release/HonghuangKongJian/OctPc-Release?color=brightgreen&label=Latest%20v5.0.0)](https://github.com/HonghuangKongJian/OctPc-Release/releases)
+[![GitHub release](https://img.shields.io/github/v/release/HonghuangKongJian/OctPc-Release?color=brightgreen&label=Latest%20v5.1.0)](https://github.com/HonghuangKongJian/OctPc-Release/releases)
 [![Format](https://img.shields.io/badge/Format-4.0%20Single--File-emerald.svg)](https://amw3.eu.org)
 [![Capacity](https://img.shields.io/badge/Scale-Billion--Points-orange.svg)]()
 [![Performance](https://img.shields.io/badge/Streaming-Sub--Second%20Preview%2060FPS-blue.svg)]()
@@ -20,7 +20,7 @@
 
 ---
 
-## 🌟 Highlights of v5.0.0
+## 🌟 Highlights of v5.1.0
 
 - 🏆 **OctPc 4.0 Self-Contained Single-File Architecture**:
   - Eliminates auxiliary companion files (`_oct.las`, `.octlod`, `.octdata`);
@@ -50,15 +50,15 @@ Please visit the 👉 **[Releases Page](https://github.com/HonghuangKongJian/Oct
 
 | Package | Size | Description |
 | :--- | :--- | :--- |
-| **`octpc_viewer_v5.0.0.zip`** | **~3.42 MB** | **[Recommended] Pure 3D Point Cloud Viewer Suite (Viewer Edition)**. Highly optimized for massive point clouds, zero setup, uncompress and run. |
-| **`octpc_cli_v5.0.0.zip`** | **~306 KB** | **Standalone CLI Indexer Tool**. Pure static self-contained, zero external dependencies, perfect for server batch pipelines. |
+| **`octpc_viewer_v5.1.0.zip`** | **~3.42 MB** | **[Recommended] Pure 3D Point Cloud Viewer Suite (Viewer Edition)**. Highly optimized for massive point clouds, zero setup, uncompress and run. |
+| **`octpc_cli_v5.1.0.zip`** | **~317 KB** | **Standalone CLI Indexer Tool**. Pure static self-contained, zero external dependencies, perfect for server batch pipelines. |
 
 ### 🔒 SHA-256 Checksums
 
 ```text
-CC0B4524EE27DD64CD8659F92F59261BCC9A061A51A9F51532F453D7FCB0A232  octpc_viewer_v5.0.0.zip
-CC0B4524EE27DD64CD8659F92F59261BCC9A061A51A9F51532F453D7FCB0A232  octpc_suite_v5.0.0.zip
-B8707A96B88C30C5476AD05A2D4F626CB64A672730951403A557419DB790805F  octpc_cli_v5.0.0.zip
+81DD66C63EE7A11370CEE0E6D5A8867221002196A1331B39C00BC113C2175E53  octpc_viewer_v5.1.0.zip
+81DD66C63EE7A11370CEE0E6D5A8867221002196A1331B39C00BC113C2175E53  octpc_suite_v5.1.0.zip
+4BF1C6A71BF1459234DA1A94E9E02D84D155F92C3565CFE374C161F7FD5C4238  octpc_cli_v5.1.0.zip
 ```
 
 ---
