@@ -24,7 +24,6 @@
 
 - 🪟 **Dockable Workspace Layout**: side panels, console and runtime log windows are now ImGui DockSpace panels that can be split, tiled or stacked freely; the dock layout is persisted to INI and fully restored on next launch;
 - ⚡ **Parallel LAS Direct Read**: byte-offset chunked parallel reading of uncompressed LAS point records, plus whole-program optimization (`/GL` + `/LTCG`) for noticeably faster conversion;
-- 🗂️ **Per-Cloud Octree Box Toggle**: bounding-box visibility is now controlled per point cloud file and moved into the layers panel, so stacked clouds no longer interfere with each other;
 - 🕒 **Build Traceability**: the bottom status bar shows the executable build time, probed from the PE header `TimeDateStamp`;
 - 🏆 **OctPc 4.0 Self-Contained Single-File Architecture**:
   - Eliminates auxiliary companion files (`_oct.las`, `.octlod`, `.octdata`);

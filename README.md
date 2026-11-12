@@ -30,8 +30,6 @@
 - ⚡ **未压缩 LAS 并行直读提速 (Parallel LAS Direct Read)**：
   - 点记录段引入字节偏移分块直读并行管线，转换阶段多核并发吞吐显著提升；
   - Release 构建开启全程序优化（`/GL` + `/LTCG`），回收重构带来的构建热点开销；
-- 🗂️ **八叉树 Box 按点云文件独立控制 (Per-Cloud Box Toggle)**：
-  - 包围盒显示开关由全局单开关改为按点云文件独立控制，多点云叠加互不干扰，开关项统一收纳进图层管理器；
 - 🕒 **构建时间可追溯 (Build Traceability)**：
   - 底部状态栏直接显示当前可执行文件构建时间，基于 PE 镜像头 `TimeDateStamp` 权威探测，便于多版本并存时区分与反馈定位；
 - 🏆 **OctPc 4.0 自包含单文件架构 (Single-File Self-Contained)**：
