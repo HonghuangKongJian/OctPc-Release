@@ -4,7 +4,7 @@
 
 # OctPc - High-Performance Point Cloud Octree Indexer & 3D Interactive Viewer
 
-[![GitHub release](https://img.shields.io/github/v/release/HonghuangKongJian/OctPc-Release?color=brightgreen&label=Latest%20v5.1.0)](https://github.com/HonghuangKongJian/OctPc-Release/releases)
+[![GitHub release](https://img.shields.io/github/v/release/HonghuangKongJian/OctPc-Release?color=brightgreen&label=Latest%20v5.2.0)](https://github.com/HonghuangKongJian/OctPc-Release/releases)
 [![Format](https://img.shields.io/badge/Format-4.0%20Single--File-emerald.svg)](https://amw3.eu.org)
 [![Capacity](https://img.shields.io/badge/Scale-Billion--Points-orange.svg)]()
 [![Performance](https://img.shields.io/badge/Streaming-Sub--Second%20Preview%2060FPS-blue.svg)]()
@@ -20,8 +20,12 @@
 
 ---
 
-## 🌟 Highlights of v5.1.0
+## 🌟 Highlights of v5.2.0
 
+- 🪟 **Dockable Workspace Layout**: side panels, console and runtime log windows are now ImGui DockSpace panels that can be split, tiled or stacked freely; the dock layout is persisted to INI and fully restored on next launch;
+- ⚡ **Parallel LAS Direct Read**: byte-offset chunked parallel reading of uncompressed LAS point records, plus whole-program optimization (`/GL` + `/LTCG`) for noticeably faster conversion;
+- 🗂️ **Per-Cloud Octree Box Toggle**: bounding-box visibility is now controlled per point cloud file and moved into the layers panel, so stacked clouds no longer interfere with each other;
+- 🕒 **Build Traceability**: the bottom status bar shows the executable build time, probed from the PE header `TimeDateStamp`;
 - 🏆 **OctPc 4.0 Self-Contained Single-File Architecture**:
   - Eliminates auxiliary companion files (`_oct.las`, `.octlod`, `.octdata`);
   - Octree metadata, multi-resolution LOD spatial pyramid, and compact leaf points are packaged into a single `.octpc` file;
@@ -40,7 +44,7 @@
 - 🗂️ **Multi-Cloud Overlay & Layer Management**: Supports opening multiple point cloud files in one viewport with a dedicated layers management panel (`[M]`), per-layer visibility toggles, Zoom-to-cloud focus, and layer unloading;
 - 🔄 **Intuitive Viewport Zoom Experience**: Reversed mouse wheel zoom direction to match industry CAD/GIS standards;
 - 🛡️ **Native Chinese & Unicode Path Compatibility**: Full-pipeline Unicode path resolving, eliminating Windows path transcoding errors and crashes;
-- 📦 **Zero-Installation Green Portable Suite (~3.42 MB)**.
+- 📦 **Zero-Installation Green Portable Suite (~3.45 MB)**.
 
 ---
 
@@ -50,15 +54,15 @@ Please visit the 👉 **[Releases Page](https://github.com/HonghuangKongJian/Oct
 
 | Package | Size | Description |
 | :--- | :--- | :--- |
-| **`octpc_viewer_v5.1.0.zip`** | **~3.42 MB** | **[Recommended] Pure 3D Point Cloud Viewer Suite (Viewer Edition)**. Highly optimized for massive point clouds, zero setup, uncompress and run. |
-| **`octpc_cli_v5.1.0.zip`** | **~317 KB** | **Standalone CLI Indexer Tool**. Pure static self-contained, zero external dependencies, perfect for server batch pipelines. |
+| **`octpc_viewer_v5.2.0.zip`** | **~3.45 MB** | **[Recommended] Pure 3D Point Cloud Viewer Suite (Viewer Edition)**. Highly optimized for massive point clouds, zero setup, uncompress and run. |
+| **`octpc_cli_v5.2.0.zip`** | **~0.31 MB** | **Standalone CLI Indexer Tool**. Pure static self-contained, zero external dependencies, perfect for server batch pipelines. |
 
 ### 🔒 SHA-256 Checksums
 
 ```text
-81DD66C63EE7A11370CEE0E6D5A8867221002196A1331B39C00BC113C2175E53  octpc_viewer_v5.1.0.zip
-81DD66C63EE7A11370CEE0E6D5A8867221002196A1331B39C00BC113C2175E53  octpc_suite_v5.1.0.zip
-4BF1C6A71BF1459234DA1A94E9E02D84D155F92C3565CFE374C161F7FD5C4238  octpc_cli_v5.1.0.zip
+E31EAC88C92BC4651EE3AEEC500D5E6F4B8D430A223F4587AF480C882D1ACEA1  octpc_viewer_v5.2.0.zip
+E31EAC88C92BC4651EE3AEEC500D5E6F4B8D430A223F4587AF480C882D1ACEA1  octpc_suite_v5.2.0.zip
+592E919E26D87954F05AE8D86E425421312DCD7D676FF2BFBAF651AD7DAC6BAF9  octpc_cli_v5.2.0.zip
 ```
 
 ---

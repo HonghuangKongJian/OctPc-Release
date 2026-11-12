@@ -4,7 +4,7 @@
 
 # OctPc - 海量点云高性能八叉树转换工具与三维交互浏览器
 
-[![GitHub release](https://img.shields.io/github/v/release/HonghuangKongJian/OctPc-Release?color=brightgreen&label=最新版本%20v5.1.0)](https://github.com/HonghuangKongJian/OctPc-Release/releases)
+[![GitHub release](https://img.shields.io/github/v/release/HonghuangKongJian/OctPc-Release?color=brightgreen&label=最新版本%20v5.2.0)](https://github.com/HonghuangKongJian/OctPc-Release/releases)
 [![Format](https://img.shields.io/badge/索引格式-4.0%20自包含单文件-emerald.svg)](https://amw3.eu.org)
 [![Capacity](https://img.shields.io/badge/单工程承载-千亿级点云-orange.svg)]()
 [![Performance](https://img.shields.io/badge/流式引擎-首帧秒开%2060FPS%20丝滑-blue.svg)]()
@@ -22,8 +22,18 @@
 
 ---
 
-## 🌟 核心特性与亮点 (v5.1.0 Highlights)
+## 🌟 核心特性与亮点 (v5.2.0 Highlights)
 
+- 🪟 **可停靠工作区布局 (Dockable Workspace Layout)**：
+  - 侧边面板、控制台与运行日志窗口改为 ImGui DockSpace 可停靠布局，可自由拖拽分割、并排或叠放；
+  - 默认面板布局重新排布，首屏同时呈现视口与信息面板；停靠状态自动持久化至 INI，下次启动完整还原；
+- ⚡ **未压缩 LAS 并行直读提速 (Parallel LAS Direct Read)**：
+  - 点记录段引入字节偏移分块直读并行管线，转换阶段多核并发吞吐显著提升；
+  - Release 构建开启全程序优化（`/GL` + `/LTCG`），回收重构带来的构建热点开销；
+- 🗂️ **八叉树 Box 按点云文件独立控制 (Per-Cloud Box Toggle)**：
+  - 包围盒显示开关由全局单开关改为按点云文件独立控制，多点云叠加互不干扰，开关项统一收纳进图层管理器；
+- 🕒 **构建时间可追溯 (Build Traceability)**：
+  - 底部状态栏直接显示当前可执行文件构建时间，基于 PE 镜像头 `TimeDateStamp` 权威探测，便于多版本并存时区分与反馈定位；
 - 🏆 **OctPc 4.0 自包含单文件架构 (Single-File Self-Contained)**：
   - 彻底淘汰原有伴生的 `_oct.las`、`.octlod`、`.octdata` 分离碎片文件；
   - 八叉树空间拓扑元数据、多级多分辨率 LOD 空间金字塔索引、紧凑叶子点云全量封装于单一 `.octpc` 文件中；
@@ -41,7 +51,7 @@
 - 🌐 **全栈原生中英双语支持 (Bilingual Ready)**：
   - 全套程序（`octpc_cli` 与 `octpc_viewer`）及文档均已原生支持中英双语，自动识别系统语言，支持随时按 `[L]` 键切换；
 - 📦 **免安装绿色便携**：
-  - 解压即用，内置轻量运行库与高清中文字体，全套压缩包仅 2.97 MB，无需安装庞杂的第三方 SDK 环境；
+  - 解压即用，内置轻量运行库与高清中文字体，全套压缩包仅 3.45 MB，无需安装庞杂的第三方 SDK 环境；
 - 🗂️ **同视口多点云叠加与图层管理 (Multi-Cloud Overlay & Layer Management)**：
   - 命令行与打开文件对话框全面支持一次性传入/多选多个点云文件，在同一三维视口中统一叠加呈现；
   - 沉浸式图层管理面板（快捷键 [M]），支持点云图层独立显隐 (Checkbox)、一键 Zoom 居中聚焦缩放、关闭卸载及批量控制；
@@ -168,15 +178,15 @@ print("转换成功，生成自包含单文件 D:/data/input.octpc")
 
 | 分发包名称 | 体积 | 推荐适用场景 |
 | :--- | :--- | :--- |
-| **octpc_viewer_v5.1.0.zip** | **~3.42 MB** | **【强烈推荐】纯三维浏览器绿色套件 (Viewer Edition)**。专为超大点云流畅浏览优化，去除土方与调试开销，解压即用。 |
-| **octpc_cli_v5.1.0.zip** | **~317 KB** | **独立命令行转换工具精简版 (CLI)**。纯静态自包含，零外部依赖，专供服务器端后台批处理或嵌入数据生产流水线。 |
+| **octpc_viewer_v5.2.0.zip** | **~3.45 MB** | **【强烈推荐】纯三维浏览器绿色套件 (Viewer Edition)**。可停靠工作区布局、多点云叠加与图层管理、实时坐标拾取、内嵌构建时间，解压即用。 |
+| **octpc_cli_v5.2.0.zip** | **~0.31 MB** | **独立命令行转换工具精简版 (CLI)**。纯静态自包含，零外部依赖，专供服务器端后台批处理或嵌入数据生产流水线。 |
 
 ### 🔒 文件 SHA-256 校验码 (Checksums)
 
 ```text
-81DD66C63EE7A11370CEE0E6D5A8867221002196A1331B39C00BC113C2175E53  octpc_viewer_v5.1.0.zip
-81DD66C63EE7A11370CEE0E6D5A8867221002196A1331B39C00BC113C2175E53  octpc_suite_v5.1.0.zip
-4BF1C6A71BF1459234DA1A94E9E02D84D155F92C3565CFE374C161F7FD5C4238  octpc_cli_v5.1.0.zip
+E31EAC88C92BC4651EE3AEEC500D5E6F4B8D430A223F4587AF480C882D1ACEA1  octpc_viewer_v5.2.0.zip
+E31EAC88C92BC4651EE3AEEC500D5E6F4B8D430A223F4587AF480C882D1ACEA1  octpc_suite_v5.2.0.zip
+592E919E26D87954F05AE8D86E425421312DCD7D676FF2BFBAF651AD7DAC6BAF9  octpc_cli_v5.2.0.zip
 ```
 
 ---
