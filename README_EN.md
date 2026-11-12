@@ -22,9 +22,9 @@
 
 ## 🌟 Highlights of v5.2.0
 
-- 🪟 **Dockable Workspace Layout**: side panels, console and runtime log windows are now ImGui DockSpace panels that can be split, tiled or stacked freely; the dock layout is persisted to INI and fully restored on next launch;
-- ⚡ **Parallel LAS Direct Read**: byte-offset chunked parallel reading of uncompressed LAS point records, plus whole-program optimization (`/GL` + `/LTCG`) for noticeably faster conversion;
-- 🕒 **Build Traceability**: the bottom status bar shows the executable build time, probed from the PE header `TimeDateStamp`;
+- 🪟 **Panels You Can Rearrange Freely**: the layers, console and runtime log panels are no longer pinned to one side — drag a panel by its title bar to split left/right, stack top/bottom, or dock them as tabs. A tidy default layout is ready on first launch, and your arrangement is remembered next time;
+- ⚡ **Faster Opening of Large LAS Files**: uncompressed LAS now converts with multi-core reading, so the bigger the file, the more waiting time you save. Nothing changes in how you open files — the overview appears first and fine details stream in quietly in the background;
+- 🕒 **Compile Time Shown in the Status Bar**: the bottom of the window shows when the program was built, so you can tell at a glance whether you are on the latest version and report issues more precisely;
 - 🏆 **OctPc 4.0 Self-Contained Single-File Architecture**:
   - Eliminates auxiliary companion files (`_oct.las`, `.octlod`, `.octdata`);
   - Octree metadata, multi-resolution LOD spatial pyramid, and compact leaf points are packaged into a single `.octpc` file;
@@ -53,8 +53,8 @@ Please visit the 👉 **[Releases Page](https://github.com/HonghuangKongJian/Oct
 
 | Package | Size | Description |
 | :--- | :--- | :--- |
-| **`octpc_viewer_v5.2.0.zip`** | **~3.45 MB** | **[Recommended] Pure 3D Point Cloud Viewer Suite (Viewer Edition)**. Highly optimized for massive point clouds, zero setup, uncompress and run. |
-| **`octpc_cli_v5.2.0.zip`** | **~0.31 MB** | **Standalone CLI Indexer Tool**. Pure static self-contained, zero external dependencies, perfect for server batch pipelines. |
+| **`octpc_viewer_v5.2.0.zip`** | **~3.45 MB** | **[Recommended] Pure Viewer Suite**: unzip and run — for everyday inspection, presentations and on-site checks. Overlay several clouds in one viewport, hover to read real-world coordinates; the conversion tool is bundled. |
+| **`octpc_cli_v5.2.0.zip`** | **~0.31 MB** | For batch conversion without a GUI: a command-line tool that turns LAS/LAZ into smaller, faster-loading `.octpc` files, easy to plug into automated pipelines. |
 
 ### 🔒 SHA-256 Checksums
 
